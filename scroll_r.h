@@ -1,5 +1,5 @@
 #define SPEED 0x180
-#define MAX_RIGHT 0xb000
+#define MAX_RIGHT 0x9000
 
 
 
@@ -39,11 +39,12 @@ unsigned int scroll_y;
 unsigned char scroll_count; 
 unsigned int pseudo_scroll_x; 
 //unsigned int pseudo_scroll_y;
-unsigned char L_R_switch;
+//unsigned char L_R_switch;
 unsigned int old_x;
 unsigned int old_y;
-
-
+unsigned char temp_x;
+unsigned char temp_y;
+unsigned char temp_room;
 
 
 
@@ -131,8 +132,14 @@ const unsigned char * const Rooms[]= {
 void load_room(void);
 void draw_sprites(void);
 void movement(void);	
-void bg_collision(void);
+//void bg_collision(void);
 void draw_screen_R(void);
 void new_cmap(void);
-void bg_collision_sub(void);
+char bg_collision_sub(void);
+
+char bg_coll_L(void);
+char bg_coll_R(void);
+char bg_coll_U(void);
+char bg_coll_D(void);
+
 
